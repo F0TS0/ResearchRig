@@ -1,0 +1,6 @@
+{
+  "permitted": [
+    "data/inbox",
+    "data/archive"
+  ]
+}
