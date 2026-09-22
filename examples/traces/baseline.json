@@ -1,0 +1,1453 @@
+[
+  {
+    "name": "tool.read_document",
+    "context": {
+      "trace_id": "0x72149324473088923799f44e18ed5880",
+      "span_id": "0xa554992b27bb10ed",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xd228f5e149ceaca8",
+    "start_time": "2026-09-22T13:48:52.692200Z",
+    "end_time": "2026-09-22T13:48:52.692537Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.path": "data/inbox/01-alderton-supply-variation.md"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "chat qwen2.5:3b",
+    "context": {
+      "trace_id": "0x72149324473088923799f44e18ed5880",
+      "span_id": "0x69e8d323b55b1a48",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xd40ab71082dc091c",
+    "start_time": "2026-09-22T13:48:52.693077Z",
+    "end_time": "2026-09-22T13:48:58.068137Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "gen_ai.operation.name": "chat",
+      "gen_ai.provider.name": "ollama",
+      "gen_ai.request.model": "qwen2.5:3b",
+      "gen_ai.request.temperature": 0.0,
+      "gen_ai.usage.input_tokens": 225,
+      "gen_ai.usage.output_tokens": 4
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "classify",
+    "context": {
+      "trace_id": "0x72149324473088923799f44e18ed5880",
+      "span_id": "0xd40ab71082dc091c",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xd228f5e149ceaca8",
+    "start_time": "2026-09-22T13:48:52.693060Z",
+    "end_time": "2026-09-22T13:48:58.109252Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "document.classification": "new_enquiry"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.search_archive",
+    "context": {
+      "trace_id": "0x72149324473088923799f44e18ed5880",
+      "span_id": "0xd7a6737c0a3e9c46",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xd228f5e149ceaca8",
+    "start_time": "2026-09-22T13:48:58.113313Z",
+    "end_time": "2026-09-22T13:48:58.121837Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.query": "Alderton supply agreement - variation to clause 9 delivery windows",
+      "tool.result_count": 3,
+      "tool.result_paths": [
+        "data/archive/a-kv1102-variation-memorandum.md",
+        "data/archive/a-kv1102-attendance-note.md",
+        "data/archive/a-kv1203-policy-extract.md"
+      ]
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "chat qwen2.5:3b",
+    "context": {
+      "trace_id": "0x72149324473088923799f44e18ed5880",
+      "span_id": "0x304ef6b003d0d4a5",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x4374898f6992b3ae",
+    "start_time": "2026-09-22T13:48:58.122233Z",
+    "end_time": "2026-09-22T13:49:07.029241Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "gen_ai.operation.name": "chat",
+      "gen_ai.provider.name": "ollama",
+      "gen_ai.request.model": "qwen2.5:3b",
+      "gen_ai.request.temperature": 0.0,
+      "gen_ai.usage.input_tokens": 687,
+      "gen_ai.usage.output_tokens": 257
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "draft",
+    "context": {
+      "trace_id": "0x72149324473088923799f44e18ed5880",
+      "span_id": "0x4374898f6992b3ae",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xd228f5e149ceaca8",
+    "start_time": "2026-09-22T13:48:58.122209Z",
+    "end_time": "2026-09-22T13:49:07.031728Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "approval",
+    "context": {
+      "trace_id": "0x72149324473088923799f44e18ed5880",
+      "span_id": "0x6aff3b992f0a5ca9",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xd228f5e149ceaca8",
+    "start_time": "2026-09-22T13:49:07.032128Z",
+    "end_time": "2026-09-22T13:49:07.032260Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [
+      {
+        "name": "approval",
+        "timestamp": "2026-09-22T13:49:07.032239Z",
+        "attributes": {
+          "approved": true
+        }
+      }
+    ],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.write_draft",
+    "context": {
+      "trace_id": "0x72149324473088923799f44e18ed5880",
+      "span_id": "0x25c73e527c35c07d",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xd228f5e149ceaca8",
+    "start_time": "2026-09-22T13:49:07.032611Z",
+    "end_time": "2026-09-22T13:49:07.032983Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.path": "out/drafts/20260922T164852-baseline/01-alderton-supply-variation-p1.md"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "document 01-alderton-supply-variation.md",
+    "context": {
+      "trace_id": "0x72149324473088923799f44e18ed5880",
+      "span_id": "0xd228f5e149ceaca8",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2026-09-22T13:48:52.692143Z",
+    "end_time": "2026-09-22T13:49:07.033296Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "document.name": "01-alderton-supply-variation.md",
+      "document.pass": 1
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.read_document",
+    "context": {
+      "trace_id": "0xde6279e3c0e2854a469a7f300ca67453",
+      "span_id": "0x756124c15264ea1b",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x5da83da74a71f9fb",
+    "start_time": "2026-09-22T13:49:07.033744Z",
+    "end_time": "2026-09-22T13:49:07.034409Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.path": "data/inbox/02-hallam-new-enquiry.md"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "chat qwen2.5:3b",
+    "context": {
+      "trace_id": "0xde6279e3c0e2854a469a7f300ca67453",
+      "span_id": "0xdaff1cd0d8eafc28",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x07342fd95c1ffe88",
+    "start_time": "2026-09-22T13:49:07.034704Z",
+    "end_time": "2026-09-22T13:49:07.683544Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "gen_ai.operation.name": "chat",
+      "gen_ai.provider.name": "ollama",
+      "gen_ai.request.model": "qwen2.5:3b",
+      "gen_ai.request.temperature": 0.0,
+      "gen_ai.usage.input_tokens": 205,
+      "gen_ai.usage.output_tokens": 4
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "classify",
+    "context": {
+      "trace_id": "0xde6279e3c0e2854a469a7f300ca67453",
+      "span_id": "0x07342fd95c1ffe88",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x5da83da74a71f9fb",
+    "start_time": "2026-09-22T13:49:07.034684Z",
+    "end_time": "2026-09-22T13:49:07.683940Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "document.classification": "new_enquiry"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.search_archive",
+    "context": {
+      "trace_id": "0xde6279e3c0e2854a469a7f300ca67453",
+      "span_id": "0x72fe6ef91fb71a89",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x5da83da74a71f9fb",
+    "start_time": "2026-09-22T13:49:07.684273Z",
+    "end_time": "2026-09-22T13:49:07.686918Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.query": "New enquiry - commercial premises lease, first approach",
+      "tool.result_count": 2,
+      "tool.result_paths": [
+        "data/archive/a-kv1147-fee-estimate.md",
+        "data/archive/a-kv1147-heads-of-terms.md"
+      ]
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "chat qwen2.5:3b",
+    "context": {
+      "trace_id": "0xde6279e3c0e2854a469a7f300ca67453",
+      "span_id": "0x69426e21350e093c",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xc0b160f48385fd4b",
+    "start_time": "2026-09-22T13:49:07.687250Z",
+    "end_time": "2026-09-22T13:49:16.174490Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "gen_ai.operation.name": "chat",
+      "gen_ai.provider.name": "ollama",
+      "gen_ai.request.model": "qwen2.5:3b",
+      "gen_ai.request.temperature": 0.0,
+      "gen_ai.usage.input_tokens": 472,
+      "gen_ai.usage.output_tokens": 286
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "draft",
+    "context": {
+      "trace_id": "0xde6279e3c0e2854a469a7f300ca67453",
+      "span_id": "0xc0b160f48385fd4b",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x5da83da74a71f9fb",
+    "start_time": "2026-09-22T13:49:07.687235Z",
+    "end_time": "2026-09-22T13:49:16.178168Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "approval",
+    "context": {
+      "trace_id": "0xde6279e3c0e2854a469a7f300ca67453",
+      "span_id": "0x7d753b57424fe476",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x5da83da74a71f9fb",
+    "start_time": "2026-09-22T13:49:16.178795Z",
+    "end_time": "2026-09-22T13:49:16.178922Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [
+      {
+        "name": "approval",
+        "timestamp": "2026-09-22T13:49:16.178890Z",
+        "attributes": {
+          "approved": true
+        }
+      }
+    ],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.write_draft",
+    "context": {
+      "trace_id": "0xde6279e3c0e2854a469a7f300ca67453",
+      "span_id": "0xb7d4bd5333fb5c3d",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x5da83da74a71f9fb",
+    "start_time": "2026-09-22T13:49:16.179325Z",
+    "end_time": "2026-09-22T13:49:16.179724Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.path": "out/drafts/20260922T164852-baseline/02-hallam-new-enquiry-p1.md"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "document 02-hallam-new-enquiry.md",
+    "context": {
+      "trace_id": "0xde6279e3c0e2854a469a7f300ca67453",
+      "span_id": "0x5da83da74a71f9fb",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2026-09-22T13:49:07.033704Z",
+    "end_time": "2026-09-22T13:49:16.179955Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "document.name": "02-hallam-new-enquiry.md",
+      "document.pass": 1
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.read_document",
+    "context": {
+      "trace_id": "0x9bd96ea3cefddc6222ce50a99d5dbb38",
+      "span_id": "0x9023b15d3128f653",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x16ce2d3bcaed1b95",
+    "start_time": "2026-09-22T13:49:16.180209Z",
+    "end_time": "2026-09-22T13:49:16.180773Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.path": "data/inbox/03-brennan-invoice-query.md"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "chat qwen2.5:3b",
+    "context": {
+      "trace_id": "0x9bd96ea3cefddc6222ce50a99d5dbb38",
+      "span_id": "0x623f18e966a58682",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x08f0ad442e78d21b",
+    "start_time": "2026-09-22T13:49:16.181020Z",
+    "end_time": "2026-09-22T13:49:16.782308Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "gen_ai.operation.name": "chat",
+      "gen_ai.provider.name": "ollama",
+      "gen_ai.request.model": "qwen2.5:3b",
+      "gen_ai.request.temperature": 0.0,
+      "gen_ai.usage.input_tokens": 210,
+      "gen_ai.usage.output_tokens": 2
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "classify",
+    "context": {
+      "trace_id": "0x9bd96ea3cefddc6222ce50a99d5dbb38",
+      "span_id": "0x08f0ad442e78d21b",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x16ce2d3bcaed1b95",
+    "start_time": "2026-09-22T13:49:16.180998Z",
+    "end_time": "2026-09-22T13:49:16.782731Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "document.classification": "invoice"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.search_archive",
+    "context": {
+      "trace_id": "0x9bd96ea3cefddc6222ce50a99d5dbb38",
+      "span_id": "0xccdfa050d56b1a50",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x16ce2d3bcaed1b95",
+    "start_time": "2026-09-22T13:49:16.783016Z",
+    "end_time": "2026-09-22T13:49:16.786397Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.query": "Invoice KV-1147-04 - query on disbursements line",
+      "tool.result_count": 2,
+      "tool.result_paths": [
+        "data/archive/a-kv1147-fee-estimate.md",
+        "data/archive/a-kv1288-estate-inventory.md"
+      ]
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "chat qwen2.5:3b",
+    "context": {
+      "trace_id": "0x9bd96ea3cefddc6222ce50a99d5dbb38",
+      "span_id": "0x5997efc45da2accc",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x3e94b33910034417",
+    "start_time": "2026-09-22T13:49:16.786722Z",
+    "end_time": "2026-09-22T13:49:22.151581Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "gen_ai.operation.name": "chat",
+      "gen_ai.provider.name": "ollama",
+      "gen_ai.request.model": "qwen2.5:3b",
+      "gen_ai.request.temperature": 0.0,
+      "gen_ai.usage.input_tokens": 465,
+      "gen_ai.usage.output_tokens": 168
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "draft",
+    "context": {
+      "trace_id": "0x9bd96ea3cefddc6222ce50a99d5dbb38",
+      "span_id": "0x3e94b33910034417",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x16ce2d3bcaed1b95",
+    "start_time": "2026-09-22T13:49:16.786706Z",
+    "end_time": "2026-09-22T13:49:22.152335Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "approval",
+    "context": {
+      "trace_id": "0x9bd96ea3cefddc6222ce50a99d5dbb38",
+      "span_id": "0xa1cac85d216e80f0",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x16ce2d3bcaed1b95",
+    "start_time": "2026-09-22T13:49:22.152759Z",
+    "end_time": "2026-09-22T13:49:22.152843Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [
+      {
+        "name": "approval",
+        "timestamp": "2026-09-22T13:49:22.152814Z",
+        "attributes": {
+          "approved": true
+        }
+      }
+    ],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.write_draft",
+    "context": {
+      "trace_id": "0x9bd96ea3cefddc6222ce50a99d5dbb38",
+      "span_id": "0x50a9ea083c18d4e9",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x16ce2d3bcaed1b95",
+    "start_time": "2026-09-22T13:49:22.153104Z",
+    "end_time": "2026-09-22T13:49:22.153323Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.path": "out/drafts/20260922T164852-baseline/03-brennan-invoice-query-p1.md"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "document 03-brennan-invoice-query.md",
+    "context": {
+      "trace_id": "0x9bd96ea3cefddc6222ce50a99d5dbb38",
+      "span_id": "0x16ce2d3bcaed1b95",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2026-09-22T13:49:16.180191Z",
+    "end_time": "2026-09-22T13:49:22.153563Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "document.name": "03-brennan-invoice-query.md",
+      "document.pass": 1
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.read_document",
+    "context": {
+      "trace_id": "0x2971627f568d86f5ab2f8e85e05e6f42",
+      "span_id": "0xeb3666736fc88d83",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x33c5ad4b1c02f43c",
+    "start_time": "2026-09-22T13:49:22.153828Z",
+    "end_time": "2026-09-22T13:49:22.154225Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.path": "data/inbox/04-delaney-survey-report.md"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "chat qwen2.5:3b",
+    "context": {
+      "trace_id": "0x2971627f568d86f5ab2f8e85e05e6f42",
+      "span_id": "0xd4301e94402a9411",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x2e3d565eeb42d606",
+    "start_time": "2026-09-22T13:49:22.154651Z",
+    "end_time": "2026-09-22T13:49:22.771239Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "gen_ai.operation.name": "chat",
+      "gen_ai.provider.name": "ollama",
+      "gen_ai.request.model": "qwen2.5:3b",
+      "gen_ai.request.temperature": 0.0,
+      "gen_ai.usage.input_tokens": 207,
+      "gen_ai.usage.output_tokens": 4
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "classify",
+    "context": {
+      "trace_id": "0x2971627f568d86f5ab2f8e85e05e6f42",
+      "span_id": "0x2e3d565eeb42d606",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x33c5ad4b1c02f43c",
+    "start_time": "2026-09-22T13:49:22.154632Z",
+    "end_time": "2026-09-22T13:49:22.771801Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "document.classification": "new_enquiry"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.search_archive",
+    "context": {
+      "trace_id": "0x2971627f568d86f5ab2f8e85e05e6f42",
+      "span_id": "0x5e58036ce8358901",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x33c5ad4b1c02f43c",
+    "start_time": "2026-09-22T13:49:22.772131Z",
+    "end_time": "2026-09-22T13:49:22.775652Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.query": "Delaney Marine insurance claim - surveyor report received",
+      "tool.result_count": 3,
+      "tool.result_paths": [
+        "data/archive/a-kv1203-loss-adjuster-letter.md",
+        "data/archive/a-kv1203-policy-extract.md",
+        "data/archive/a-kv1147-fee-estimate.md"
+      ]
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "chat qwen2.5:3b",
+    "context": {
+      "trace_id": "0x2971627f568d86f5ab2f8e85e05e6f42",
+      "span_id": "0xc610837d115255eb",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x7a0f3216872e09b4",
+    "start_time": "2026-09-22T13:49:22.776026Z",
+    "end_time": "2026-09-22T13:49:29.609697Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "gen_ai.operation.name": "chat",
+      "gen_ai.provider.name": "ollama",
+      "gen_ai.request.model": "qwen2.5:3b",
+      "gen_ai.request.temperature": 0.0,
+      "gen_ai.usage.input_tokens": 620,
+      "gen_ai.usage.output_tokens": 210
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "draft",
+    "context": {
+      "trace_id": "0x2971627f568d86f5ab2f8e85e05e6f42",
+      "span_id": "0x7a0f3216872e09b4",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x33c5ad4b1c02f43c",
+    "start_time": "2026-09-22T13:49:22.776009Z",
+    "end_time": "2026-09-22T13:49:29.611528Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "approval",
+    "context": {
+      "trace_id": "0x2971627f568d86f5ab2f8e85e05e6f42",
+      "span_id": "0xd36910d0d41f3e86",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x33c5ad4b1c02f43c",
+    "start_time": "2026-09-22T13:49:29.611920Z",
+    "end_time": "2026-09-22T13:49:29.611975Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [
+      {
+        "name": "approval",
+        "timestamp": "2026-09-22T13:49:29.611960Z",
+        "attributes": {
+          "approved": true
+        }
+      }
+    ],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.write_draft",
+    "context": {
+      "trace_id": "0x2971627f568d86f5ab2f8e85e05e6f42",
+      "span_id": "0x0813a8aa00777c1c",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x33c5ad4b1c02f43c",
+    "start_time": "2026-09-22T13:49:29.612255Z",
+    "end_time": "2026-09-22T13:49:29.612605Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.path": "out/drafts/20260922T164852-baseline/04-delaney-survey-report-p1.md"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "document 04-delaney-survey-report.md",
+    "context": {
+      "trace_id": "0x2971627f568d86f5ab2f8e85e05e6f42",
+      "span_id": "0x33c5ad4b1c02f43c",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2026-09-22T13:49:22.153813Z",
+    "end_time": "2026-09-22T13:49:29.612921Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "document.name": "04-delaney-survey-report.md",
+      "document.pass": 1
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.read_document",
+    "context": {
+      "trace_id": "0x9f2a652c07c58ac3d9e394873c3a21be",
+      "span_id": "0xef2ca97a945bc12f",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x7f009d26572c5c91",
+    "start_time": "2026-09-22T13:49:29.613219Z",
+    "end_time": "2026-09-22T13:49:29.613687Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.path": "data/inbox/05-office-circular.md"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "chat qwen2.5:3b",
+    "context": {
+      "trace_id": "0x9f2a652c07c58ac3d9e394873c3a21be",
+      "span_id": "0xe6ecfc85f9f4c570",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xe01e7408c714e678",
+    "start_time": "2026-09-22T13:49:29.613948Z",
+    "end_time": "2026-09-22T13:49:30.266451Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "gen_ai.operation.name": "chat",
+      "gen_ai.provider.name": "ollama",
+      "gen_ai.request.model": "qwen2.5:3b",
+      "gen_ai.request.temperature": 0.0,
+      "gen_ai.usage.input_tokens": 193,
+      "gen_ai.usage.output_tokens": 5
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "classify",
+    "context": {
+      "trace_id": "0x9f2a652c07c58ac3d9e394873c3a21be",
+      "span_id": "0xe01e7408c714e678",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x7f009d26572c5c91",
+    "start_time": "2026-09-22T13:49:29.613935Z",
+    "end_time": "2026-09-22T13:49:30.266932Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "document.classification": "ongoing_matter"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.search_archive",
+    "context": {
+      "trace_id": "0x9f2a652c07c58ac3d9e394873c3a21be",
+      "span_id": "0xcc64db5e20155d47",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x7f009d26572c5c91",
+    "start_time": "2026-09-22T13:49:30.267241Z",
+    "end_time": "2026-09-22T13:49:30.269806Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.query": "Building works - lift out of service 22-24 July",
+      "tool.result_count": 1,
+      "tool.result_paths": [
+        "data/archive/a-kv1147-heads-of-terms.md"
+      ]
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "chat qwen2.5:3b",
+    "context": {
+      "trace_id": "0x9f2a652c07c58ac3d9e394873c3a21be",
+      "span_id": "0x529a9bb72dcde039",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x3a9e1c650918b1d3",
+    "start_time": "2026-09-22T13:49:30.270167Z",
+    "end_time": "2026-09-22T13:49:34.716284Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "gen_ai.operation.name": "chat",
+      "gen_ai.provider.name": "ollama",
+      "gen_ai.request.model": "qwen2.5:3b",
+      "gen_ai.request.temperature": 0.0,
+      "gen_ai.usage.input_tokens": 330,
+      "gen_ai.usage.output_tokens": 145
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "draft",
+    "context": {
+      "trace_id": "0x9f2a652c07c58ac3d9e394873c3a21be",
+      "span_id": "0x3a9e1c650918b1d3",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x7f009d26572c5c91",
+    "start_time": "2026-09-22T13:49:30.270151Z",
+    "end_time": "2026-09-22T13:49:34.716905Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "approval",
+    "context": {
+      "trace_id": "0x9f2a652c07c58ac3d9e394873c3a21be",
+      "span_id": "0xf93e2df7c9591227",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x7f009d26572c5c91",
+    "start_time": "2026-09-22T13:49:34.717270Z",
+    "end_time": "2026-09-22T13:49:34.717335Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [
+      {
+        "name": "approval",
+        "timestamp": "2026-09-22T13:49:34.717319Z",
+        "attributes": {
+          "approved": true
+        }
+      }
+    ],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "tool.write_draft",
+    "context": {
+      "trace_id": "0x9f2a652c07c58ac3d9e394873c3a21be",
+      "span_id": "0x694239df70b9552f",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x7f009d26572c5c91",
+    "start_time": "2026-09-22T13:49:34.717767Z",
+    "end_time": "2026-09-22T13:49:34.717967Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "tool.path": "out/drafts/20260922T164852-baseline/05-office-circular-p1.md"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  },
+  {
+    "name": "document 05-office-circular.md",
+    "context": {
+      "trace_id": "0x9f2a652c07c58ac3d9e394873c3a21be",
+      "span_id": "0x7f009d26572c5c91",
+      "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2026-09-22T13:49:29.613201Z",
+    "end_time": "2026-09-22T13:49:34.718242Z",
+    "status": {
+      "status_code": "UNSET"
+    },
+    "attributes": {
+      "document.name": "05-office-circular.md",
+      "document.pass": 1
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.44.0",
+        "service.instance.id": "033b4c92-943c-4f9a-aa3d-ca4ed884e9f1",
+        "service.name": "researchrig"
+      },
+      "schema_url": ""
+    }
+  }
+]

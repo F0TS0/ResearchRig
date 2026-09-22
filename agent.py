@@ -23,7 +23,7 @@ ROOT = Path(__file__).parent
 OUT = ROOT / "out"
 INBOX = ROOT / "data" / "inbox"
 CLASSES = ["new_enquiry", "ongoing_matter", "invoice", "other"]
-MODEL = os.environ.get("RIG_MODEL", "llama3.1:8b")
+MODEL = os.environ.get("RIG_MODEL", "qwen2.5:3b")
 OLLAMA = os.environ.get("RIG_OLLAMA", "http://localhost:11434")
 
 
@@ -44,9 +44,11 @@ class JsonFileExporter(SpanExporter):
 
 def setup_tracing(trace_path):
     provider = TracerProvider(resource=Resource.create({"service.name": "researchrig"}))
-    provider.add_span_processor(
-        BatchSpanProcessor(OTLPSpanExporter(endpoint=f"{os.environ.get('RIG_OTLP', 'http://localhost:4318')}/v1/traces"))
-    )
+    otlp = os.environ.get("RIG_OTLP")
+    if otlp:
+        provider.add_span_processor(
+            BatchSpanProcessor(OTLPSpanExporter(endpoint=f"{otlp}/v1/traces"))
+        )
     provider.add_span_processor(SimpleSpanProcessor(JsonFileExporter(trace_path)))
     trace.set_tracer_provider(provider)
     return provider, trace.get_tracer("researchrig")
