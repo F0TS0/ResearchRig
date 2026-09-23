@@ -11,6 +11,6 @@ run: .venv
 	$(PY) agent.py $(FLAGS)
 
 clean:
-	rm -rf out
+	rm -rf out/drafts
 
 .PHONY: jaeger run clean
