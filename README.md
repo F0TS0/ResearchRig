@@ -5,30 +5,45 @@ The agent is not the object of study. The trace is.
 
 Fictional firm, synthetic data. No cloud, no API keys.
 
-## Prerequisites
+Handed over as the starting point for a semester project on AI agent
+auditability. Read [CONTEXT.md](CONTEXT.md) before changing anything the trace
+records.
+
+## Setup
+
+```bash
+git clone <repo-url> researchrig && cd researchrig
+```
+
+### Prerequisites
 
 | | |
 |---|---|
-| `git` | to clone |
 | Python | 3.9+ (developed on 3.14) — `make` uses whichever `python3` is first on `PATH` |
 | [Ollama](https://ollama.com) | runs the local model |
 | `make` | Xcode Command Line Tools on macOS, `build-essential` on Debian/Ubuntu |
 | Docker Desktop | **optional** — only needed for Jaeger |
 | RAM | **8 GB minimum** |
 
-**On an 8 GB machine, do not run Jaeger and the model at the same time.**
-The default model is ~1.9 GB resident and the Docker Desktop VM takes a further
-~3.8 GB by default; on macOS the model's weights are wired and cannot be paged
-out, so the two together will drive the machine into swap and may hang it. Run
-the model *or* Jaeger. A larger model such as `llama3.1:8b` (~4.9 GB) does not
-leave room for Jaeger on 8 GB at all. Traces are written to a file either way —
-Jaeger is a convenience, not a requirement.
+**On an 8 GB machine, do not run Jaeger alongside the model.** The default model
+is ~1.9 GB resident and the Docker Desktop VM takes a further ~3.8 GB by default.
+On macOS the model's weights are wired and cannot be paged out, so the two
+together drive the machine into swap and may hang it. Run the model *or* Jaeger.
+A larger model such as `llama3.1:8b` (~4.9 GB) leaves no room for Jaeger on 8 GB
+at all. Traces are written to a file either way — Jaeger is a convenience, not a
+requirement.
 
-## Setup
+### Running it
+
+Start Ollama in a separate terminal and leave it running:
 
 ```bash
-git clone <repo-url> researchrig && cd researchrig
-ollama serve                   # separate terminal, leave running
+ollama serve
+```
+
+Then, back in the repo:
+
+```bash
 ollama pull qwen2.5:3b         # or: export RIG_MODEL=<model>
 make run                       # first run builds .venv
 ```
@@ -45,16 +60,16 @@ make run
 ```
 
 Spans are sent to Jaeger only when `RIG_OTLP` is set. If it is set and Jaeger is
-not reachable, the exporter retries and prints connection errors to the console;
+not reachable the exporter retries and prints connection errors to the console;
 the run still completes and the JSON trace is still written.
 
 ### Environment variables
 
 | variable | default | effect |
 |---|---|---|
-| `RIG_MODEL` | `qwen2.5:3b` | Ollama model tag used for both `classify` and `draft` |
+| `RIG_MODEL` | `qwen2.5:3b` | Ollama model tag, used for both `classify` and `draft` |
 | `RIG_OLLAMA` | `http://localhost:11434` | Ollama base URL |
-| `RIG_OTLP` | *(unset)* | OTLP HTTP base URL. Unset means file-only; no spans are exported over the network |
+| `RIG_OTLP` | *(unset)* | OTLP HTTP base URL. Unset means file-only: no spans are exported over the network |
 
 ## Runs
 
@@ -84,31 +99,51 @@ comparable after a clean.
 
 ### About `--leak-scope`
 
-The restricted material reaches the **prompt**, not necessarily the draft. The
-retrieved file is concatenated into the `PRIOR:` block sent to the model; whether
-any of it is reproduced in the generated reply is up to the model, and usually it
-is not. What the trace shows is the retrieval, not the disclosure.
+The restricted material reaches the **prompt, not the draft**. The retrieved file
+is concatenated into the `PRIOR:` block sent to the model, and the model does not
+reproduce it: **the draft reads clean**. Someone reviewing the output sees
+nothing wrong. What the trace shows is the retrieval, not a disclosure — and the
+retrieval is the whole event.
 
-In the shipped corpus only **`01-alderton-supply-variation.md`** triggers the
-leak. Its subject line shares enough terms with
+**Retrieval is deterministic.** `search_archive` scores files by plain term
+overlap against the email's subject line, over a fixed corpus, with no model
+involvement. The same document retrieves the same files on every run, including
+under `--nondeterministic`, which changes the sampling temperature but not the
+subject line the search is built from.
+
+In the shipped corpus exactly one document triggers the leak:
+**`01-alderton-supply-variation.md`**. Its subject line shares enough terms with
 `data/restricted/r-kv2291-settlement-position.md` for that file to score into the
-top three hits. The other four documents retrieve archive files only, so a run
-with `--leak-scope` looks identical to a baseline run for documents 02–05.
+top three hits. Documents 02–05 retrieve archive files only, so for them a
+`--leak-scope` run and a baseline run are identical.
 
 ## Approval
 
-**The approval gate is interactive.** Without `--skip-approval` the run prints
-each draft and blocks on `approve? [y/n]` — once per document per pass. That is
-5 prompts for a baseline or `--leak-scope` run, and 10 for `--nondeterministic`.
-The run cannot complete unattended.
+**The approval gate is an interactive `y/n` prompt.** Without `--skip-approval`
+the run prints each draft and blocks on `approve? [y/n]`, once per document per
+pass:
+
+| scenario | prompts |
+|---|---|
+| baseline | 5 |
+| `--leak-scope` | 5 |
+| `--nondeterministic` | 10 |
+| `--skip-approval` | 0 |
+
+The run cannot complete unattended unless `--skip-approval` is passed.
 
 > **Do not pipe `yes` into the prompt.** `yes y | make run` makes the run
-> unattended, but it also collapses the approval span's duration to the same
-> microsecond scale as `--skip-approval`. The one signal in the trace that might
-> have distinguished a human reading a draft from a gate that never prompted —
-> how long `approval` took — is destroyed, and the resulting trace is
-> indistinguishable from a `--skip-approval` trace by any attribute it records.
-> If a run needs to be unattended, use `--skip-approval` and be honest about it.
+> unattended, but it also completes every approval in microseconds — the same
+> scale as `--skip-approval`. The resulting trace is indistinguishable from a
+> `--skip-approval` trace by anything it records, including duration.
+>
+> **This is itself a finding, not an inconvenience.** It demonstrates that span
+> duration was never evidence of a human in the first place. A fast approval
+> could always have been a script. A slow one could always have been someone who
+> walked away from the desk. Duration tells you how long the span was open, and
+> nothing about who, if anyone, was on the other end of it. Treating it as a
+> proxy for human review only works if you already trust the thing you are
+> trying to verify.
 
 ## Spans
 
@@ -130,9 +165,28 @@ were permitted is not in the trace.
 reading protocol below can be worked through without running anything. All four
 were produced with `qwen2.5:3b`.
 
+### Example check
+
+`examples/check_approval.py` reads one trace file and answers a single audit
+question — *was this draft approved by a human?* — for each document:
+
+```bash
+.venv/bin/python examples/check_approval.py examples/traces/baseline.json
+```
+
+It is deterministic: no LLM, no network. It returns `yes`, `no` or
+`cannot_determine` per document, with the span it based the answer on and a
+one-line reason. Against every trace this rig currently produces it returns
+`cannot_determine` for every document, and that is the correct answer rather
+than a gap in the script.
+
+It is an example of the **shape** of an audit check, in forty lines. Building
+the real harness is the project.
+
 ## Deliberately absent
 
-These are omissions, not oversights. Do not "fix" them.
+These are omissions in the trace, not oversights. Do not "fix" them. See
+[CONTEXT.md](CONTEXT.md).
 
 - **No seed.** Sampling is left unseeded and no seed is recorded, so a
   `--nondeterministic` pass cannot be reproduced from the trace.
@@ -140,6 +194,28 @@ These are omissions, not oversights. Do not "fix" them.
   and nothing about who gave it or what they saw.
 - **No prompt or completion content.** Capture is opt-in under the semantic
   conventions and stays off, as it does in an ordinary application.
+
+## What is deliberately not here
+
+Absent from the *rig*, as distinct from absent from the trace.
+
+**There are no users.** No initiator, no second person, no background jobs, no
+sessions, no accounts. A run is one process started by whoever was at the
+keyboard, and the trace says nothing about them because there is nothing to say.
+Identity is not a feature that was left half-built — it does not exist at any
+layer. Students build it from scratch, and deciding what it would even mean to
+attribute a span to a person is part of the work.
+
+**The dataset is 15 documents.** Five in `data/inbox/`, eight in
+`data/archive/`, two in `data/restricted/`. That is enough to read a trace by
+hand and small enough that every span can be accounted for. It is nowhere near
+enough for load testing, sampling behaviour, or anything about how traces
+degrade at volume. Scaling the corpus is the students' work, and the size it
+needs to be depends on the question being asked of it.
+
+**The trace gaps stay.** [CONTEXT.md](CONTEXT.md) sets out why. Closing a gap
+before you can say precisely what a reader loses by its absence defeats the
+exercise — the gaps are the object of study, not a backlog.
 
 ## Reading protocol
 
@@ -153,8 +229,8 @@ Three questions to put to any trace this rig produces.
    The event records `approved: true`. It does not record an identity, the
    draft that was displayed, or whether a human was present at all. Under
    `--skip-approval` the trace asserts an approval that never happened, and
-   nothing in the trace distinguishes it from one that did. Span duration is the
-   only remaining tell, and piping `yes` into a genuine run removes even that.
+   nothing in the trace distinguishes it from one that did. Duration does not
+   distinguish them either — see **Approval** above.
 
 3. **Why did the two runs differ?**
    Prompt and completion content are not captured — the semantic conventions
