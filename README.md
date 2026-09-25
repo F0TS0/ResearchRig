@@ -12,7 +12,8 @@ records.
 ## Setup
 
 ```bash
-git clone <repo-url> researchrig && cd researchrig
+git clone https://github.com/F0TS0/ResearchRig.git researchrig
+cd researchrig
 ```
 
 ### Prerequisites
@@ -48,8 +49,9 @@ ollama pull qwen2.5:3b         # or: export RIG_MODEL=<model>
 make run                       # first run builds .venv
 ```
 
-By default the run writes its trace to a file only. Nothing is sent over the
-network and no exporter errors are printed.
+By default the run writes its trace to a file only. Nothing is sent to an
+external service: the model request goes to Ollama over local HTTP, and no
+exporter errors are printed.
 
 ### Jaeger (optional)
 
@@ -57,6 +59,12 @@ network and no exporter errors are printed.
 make jaeger                            # docker compose up -d  -> UI on :16686
 export RIG_OTLP=http://localhost:4318
 make run
+```
+
+When finished with Jaeger:
+
+```bash
+docker compose down
 ```
 
 Spans are sent to Jaeger only when `RIG_OTLP` is set. If it is set and Jaeger is
@@ -163,7 +171,10 @@ were permitted is not in the trace.
 `examples/traces/` holds one committed trace per scenario — `baseline.json`,
 `leak-scope.json`, `skip-approval.json`, `nondeterministic.json` — so the
 reading protocol below can be worked through without running anything. All four
-were produced with `qwen2.5:3b`.
+were regenerated on 23 September 2026 with `qwen2.5:3b` and OpenTelemetry
+Python packages 1.44.0. The exact Ollama version and model digest were not
+recorded, so the committed traces—not a fresh model run—are the reproducible
+inputs for the reading exercise.
 
 ### Example check
 

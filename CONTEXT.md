@@ -62,7 +62,9 @@ coincidence, which is why the README tells you not to.
 
 ## Findings already established
 
-Run and read, August 2026, qwen2.5:3b:
+Run and read from the committed traces regenerated on 23 September 2026 with
+qwen2.5:3b and OpenTelemetry 1.44.0. The exact Ollama version and model digest
+were not recorded:
 
 1. Initiator is unrecoverable. No correlating structure exists.
 2. The trail asserts a human approval that did not occur, and nothing in
